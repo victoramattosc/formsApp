@@ -1,17 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Login
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png">
+
+  <ion-item fill="solid">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="email" ngModel email></ion-input>
+    <ion-note slot="helper">Insira um Email Válido</ion-note>
+    <ion-note slot="error">Email Inválido</ion-note>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input placeholder="Insira a Senha"></ion-input>
+    <ion-button fill="clear" size="small">Esqueceu a senha?</ion-button>
+  </ion-item>
+
+  <div class="botoes">
+  <ion-button class="ion-text-center botao1">Entrar</ion-button>
+
+  <ion-button size="small" fill="outline" class="botao1">Registre-se</ion-button>
+</div>
 </ion-content>
