@@ -1,31 +1,33 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="barra">
     <ion-title>
       Login
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="fundo">
 
-  <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png">
 
-  <ion-item fill="solid">
+
+  <ion-card>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/5645/5645053.png">
+
     <ion-label position="floating">Email</ion-label>
-    <ion-input type="email" ngModel email></ion-input>
-    <ion-note slot="helper">Insira um Email Válido</ion-note>
-    <ion-note slot="error">Email Inválido</ion-note>
-  </ion-item>
+    <ion-input placeholder="Insira o Email"></ion-input>
 
-  <ion-item>
+
     <ion-label position="floating">Senha</ion-label>
-    <ion-input placeholder="Insira a Senha"></ion-input>
+    <ion-input placeholder="Insira a Senha" type="password"></ion-input>
+
     <ion-button fill="clear" size="small">Esqueceu a senha?</ion-button>
-  </ion-item>
 
   <div class="botoes">
   <ion-button class="ion-text-center botao1">Entrar</ion-button>
 
+  <ion-label class="espaco">Ainda não tem uma conta?</ion-label>
   <ion-button size="small" fill="outline" class="botao1">Registre-se</ion-button>
 </div>
+</ion-card>
 </ion-content>
