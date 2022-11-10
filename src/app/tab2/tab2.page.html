@@ -14,30 +14,40 @@
 
     <hr style="height:5px; border:0; width: 50px; background:linear-gradient(to right, #E0F6FF, #3880ff);"/>
 
+  <ion-item>
   <ion-label position="floating">Nome</ion-label>
   <ion-input placeholder="Insira seu nome"></ion-input>
+</ion-item>
 
+<ion-item>
   <ion-label position="floating">Sobrenome</ion-label>
   <ion-input placeholder="Insira seu sobrenome"></ion-input>
+</ion-item>
 
+<ion-item>
   <ion-label position="floating">CPF</ion-label>
   <ion-input placeholder="Insira seu cpf"></ion-input>
+</ion-item>
 
+<ion-item>
   <ion-label position="floating">Email</ion-label>
   <ion-input placeholder="Insira seu email"></ion-input>
+</ion-item>
 
+<ion-item>
   <ion-label position="floating">Senha</ion-label>
   <ion-input placeholder="Insira sua senha" type="password"></ion-input>
+</ion-item>
 
+<ion-item>
   <ion-label position="floating">Confirma Senha</ion-label>
   <ion-input placeholder="Confirme sua senha" type="password"></ion-input>
-
+</ion-item>
 
 <div class="botoes">
-    <ion-button class="ion-text-center botao1">Salvar</ion-button>
+    <ion-button class="ion-text-center botao1">Registrar</ion-button>
 
-    <ion-label class="espaco">Já possui uma conta?</ion-label>
-    <ion-button size="small" fill="outline" class="botao1">Login</ion-button>
+    <p class="espaco">Já possui uma conta? <a routerLink="/tabs/tab1">Login</a></p>
   </div>
 
 </ion-card>
