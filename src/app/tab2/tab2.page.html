@@ -1,17 +1,45 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="barra ion-text-center">
     <ion-title>
-      Tab 2
+      Registro
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="fundo">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card>
+
+    <ion-card-title class="registro ion-text-center">Registre-se</ion-card-title>
+
+    <hr style="height:5px; border:0; width: 50px; background:linear-gradient(to right, #E0F6FF, #3880ff);"/>
+
+  <ion-label position="floating">Nome</ion-label>
+  <ion-input placeholder="Insira seu nome"></ion-input>
+
+  <ion-label position="floating">Sobrenome</ion-label>
+  <ion-input placeholder="Insira seu sobrenome"></ion-input>
+
+  <ion-label position="floating">CPF</ion-label>
+  <ion-input placeholder="Insira seu cpf"></ion-input>
+
+  <ion-label position="floating">Email</ion-label>
+  <ion-input placeholder="Insira seu email"></ion-input>
+
+  <ion-label position="floating">Senha</ion-label>
+  <ion-input placeholder="Insira sua senha" type="password"></ion-input>
+
+  <ion-label position="floating">Confirma Senha</ion-label>
+  <ion-input placeholder="Confirme sua senha" type="password"></ion-input>
+
+
+<div class="botoes">
+    <ion-button class="ion-text-center botao1">Salvar</ion-button>
+
+    <ion-label class="espaco">Já possui uma conta?</ion-label>
+    <ion-button size="small" fill="outline" class="botao1">Login</ion-button>
+  </div>
+
+</ion-card>
+
 </ion-content>
