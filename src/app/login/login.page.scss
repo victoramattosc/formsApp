@@ -1,0 +1,36 @@
+.botoes{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+ion-card{
+  --background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  --color: white;
+}
+
+.fundo{
+  --background: linear-gradient(#E0F6FF, #3880ff);
+}
+
+.barra{
+  --background: black;
+  --color: white;
+  --border-color: #3880ff;
+}
+
+.espaco{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+img{
+  margin-bottom: 5%;
+}
+
+ion-item{
+  --background: transparent;
+  --color: white;
+}
