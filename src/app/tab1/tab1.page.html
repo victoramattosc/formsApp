@@ -1,8 +1,15 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="toolbar ion-text-center">
+  <ion-toolbar class="toolbar">
     <ion-title>
       Home
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/registro">
+        <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
@@ -122,6 +129,5 @@
     </ion-label>
   </ion-item>
 
-<ion-button routerLink="/login">back</ion-button>
 </ion-content>
 
