@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms' ;
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.page.html',
-  styleUrls: ['./registro.page.scss'],
+  selector: 'app-cadastro',
+  templateUrl: './cadastro.page.html',
+  styleUrls: ['./cadastro.page.scss'],
 })
-export class RegistroPage implements OnInit {
+export class CadastroPage implements OnInit {
 
-  formRegistro: FormGroup;
+  formCadastro: FormGroup;
 
   mensagens = {
     nome: [
@@ -34,7 +34,7 @@ export class RegistroPage implements OnInit {
   };
 
   constructor(private formBuilder: FormBuilder) {
-    this.formRegistro = this.formBuilder.group({
+    this.formCadastro = this.formBuilder.group({
       nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       cpf: ['', Validators.compose([Validators.required])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
@@ -49,7 +49,8 @@ export class RegistroPage implements OnInit {
   }
 
   salvarRegistro(){
-    console.log('Formulário: ', this.formRegistro.valid);
+    console.log('Formulário: ', this.formCadastro.valid);
   }
 
 }
+
