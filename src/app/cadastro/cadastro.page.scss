@@ -1,0 +1,45 @@
+.botoes{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+ion-card{
+  --background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  --color: white;
+}
+
+.fundo{
+  --background: linear-gradient(#3880ff, #E0F6FF);
+}
+
+.barra{
+  --background: black;
+  --color: white;
+  --border-color: #E0F6FF;
+}
+
+.espaco{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.cadastro{
+  --color: white;
+  margin-bottom: 5%;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif
+}
+
+ion-item{
+  --background: transparent;
+  --color: white;
+  margin-bottom: 5%;
+}
+
+.msg-erro{
+  color: red;
+  font-size: 10px;
+  clear: both;
+  position: relative;
+}

@@ -8,21 +8,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="fundo">
-  <ion-card>
-    <ion-card-title class="registro ion-text-center"
-      >Registre-se</ion-card-title
-    >
 
-    <hr
-      style="
-        height: 5px;
-        border: 0;
-        width: 50px;
-        background: linear-gradient(to right, #e0f6ff, #3880ff);
-      "
-    />
 
     <form [formGroup]="formRegistro">
+
+      <ion-card>
+        <ion-card-title class="registro ion-text-center"
+          >Registre-se</ion-card-title
+        >
+
+        <hr
+          style="
+            height: 5px;
+            border: 0;
+            width: 50px;
+            background: linear-gradient(to right, #e0f6ff, #3880ff);
+          "
+        />
+
       <ion-item>
         <ion-label position="floating">Nome</ion-label>
         <ion-input
@@ -32,7 +35,7 @@
         <ng-container *ngFor="let erro of mensagens.nome">
           <span
             class="msg-erro"
-            *ngIf="formRegistro.get('nome').hasError(erro.tipo) && (fromRegistro.get('nome').dirty || formRegistro.get('nome').touched)"
+            *ngIf="formRegistro.get('nome').hasError(erro.tipo) && (formRegistro.get('nome').dirty || formRegistro.get('nome').touched)"
           >
             {{erro.mensagem}}
           </span>
@@ -104,15 +107,18 @@
           </span>
         </ng-container>
       </ion-item>
+
+      <div class="botoes">
+        <ion-button class="ion-text-center botao1" (click)="salvarRegistro()">
+          Registrar
+        </ion-button>
+
+        <ion-label class="espaco">Já tem uma conta? <a routerLink="../login">Faça o Login</a></ion-label>
+      </div>
+
+    </ion-card>
+
     </form>
 
-    <div class="botoes">
-      <ion-button class="ion-text-center botao1" (click)="salvarRegistro()">
-        Registrar
-      </ion-button>
 
-      <ion-label class="espaco">Já tem uma conta? <a routerLink="../login">Faça o Login</a></ion-label>
-    </div>
-
-  </ion-card>
 </ion-content>
