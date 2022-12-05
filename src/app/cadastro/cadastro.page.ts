@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import {FormBuilder, FormGroup, Validators} from '@angular/forms' ;
 
+import { Router } from '@angular/router';
+import { Produto } from '../models/produto';
+import { StorageService } from '../services/storage.service';
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.page.html',
@@ -10,6 +14,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms' ;
 export class CadastroPage implements OnInit {
 
   formCadastro: FormGroup;
+  produto: Produto = new Produto();
 
   mensagens = {
     nome: [
@@ -27,7 +32,7 @@ export class CadastroPage implements OnInit {
     ],
   };
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private storageService: StorageService, private route: Router) {
     this.formCadastro = this.formBuilder.group({
       nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       descricao: ['', Validators.compose([Validators.required])],
@@ -41,7 +46,18 @@ export class CadastroPage implements OnInit {
   ngOnInit() {
   }
 
-  salvarCadastro(){
-    console.log('Formulário: ', this.formCadastro.valid);
+  async salvarCadastro(){
+    if (this.formCadastro.valid){
+      this.produto.nome = this.formCadastro.value.nome;
+      this.produto.descricao = this.formCadastro.value.descricao;
+      this.produto.validade = this.formCadastro.value.validade;
+      this.produto.preco = this.formCadastro.value.preco;
+      await this.storageService.set(this.produto.nome, this.produto);
+      this.route.navigateByUrl('/tabs/tab1');
+    }
+    else{
+      alert('Formulário Inválido');
+    }
   }
+
 }
