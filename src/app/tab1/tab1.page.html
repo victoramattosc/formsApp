@@ -20,7 +20,7 @@
     <ion-item>
       <ion-label>
         <div>
-          <h1>{{user.nome}}</h1>
+          <h1>{{user.nomep}}</h1>
           <span>{{user.descricao}}</span>
           <hr />
           <span>{{user.validade}}</span>
@@ -30,7 +30,7 @@
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option color="danger" (click)="excluirProduto(user.nome)">
+      <ion-item-option color="danger" (click)="excluirProdutos(user.nomep)">
         <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
       </ion-item-option>
     </ion-item-options>

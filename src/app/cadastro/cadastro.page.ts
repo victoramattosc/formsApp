@@ -17,7 +17,7 @@ export class CadastroPage implements OnInit {
   produto: Produto = new Produto();
 
   mensagens = {
-    nome: [
+    nomep: [
       { tipo: 'required', mensagem: 'O campo Nome é obrigatório.' },
       { tipo: 'minlength', mensagem: 'O nome deve ter pelo menos 3 caracteres.' },
     ],
@@ -34,7 +34,7 @@ export class CadastroPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private storageService: StorageService, private route: Router) {
     this.formCadastro = this.formBuilder.group({
-      nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      nomep: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       descricao: ['', Validators.compose([Validators.required])],
       validade: ['', Validators.compose([Validators.required, Validators.maxLength(10)])],
       preco: ['', Validators.compose([Validators.required])]
@@ -48,11 +48,11 @@ export class CadastroPage implements OnInit {
 
   async salvarCadastro(){
     if (this.formCadastro.valid){
-      this.produto.nome = this.formCadastro.value.nome;
+      this.produto.nomep = this.formCadastro.value.nome;
       this.produto.descricao = this.formCadastro.value.descricao;
       this.produto.validade = this.formCadastro.value.validade;
       this.produto.preco = this.formCadastro.value.preco;
-      await this.storageService.set(this.produto.nome, this.produto);
+      await this.storageService.set(this.produto.nomep, this.produto);
       this.route.navigateByUrl('/tabs/tab1');
     }
     else{

@@ -1,5 +1,5 @@
 export class Produto{
-  nome: string;
+  nomep: string;
   descricao: string;
   validade: string;
   preco: number;

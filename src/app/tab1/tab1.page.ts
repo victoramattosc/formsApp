@@ -21,8 +21,8 @@ export class Tab1Page {
     this.buscarProdutos();
   }
 
-  async excluirProdutos(email: string){
-    await this.storageService.remove(email);
+  async excluirProdutos(nomep: string){
+    await this.storageService.remove(nomep);
     this.buscarProdutos();
   }
 
