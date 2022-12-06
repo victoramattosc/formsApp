@@ -8,24 +8,45 @@
 
 <ion-content [fullscreen]="true" class="fundo">
 
+  <form [formGroup]="formLogin">
+
   <ion-card>
 
-    <form>
 
     <img src="https://cdn-icons-png.flaticon.com/512/5645/5645053.png">
 
     <ion-item>
-    <ion-label position="floating">Email</ion-label>
-    <ion-input placeholder="Insira o Email"></ion-input>
-  </ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        placeholder="Insira seu email"
+        formControlName="email"
+      ></ion-input>
+      <ng-container *ngFor="let erro of mensagens.email">
+        <span
+          class="msg-erro"
+          *ngIf="formLogin.get('email').hasError(erro.tipo) && (formLogin.get('email').dirty || formLogin.get('email').touched)"
+        >
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
 
     <ion-item>
-    <ion-label position="floating">Senha</ion-label>
-    <ion-input placeholder="Insira a Senha" type="password"></ion-input>
-
-  </ion-item>
-
-</form>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input
+        placeholder="Insira sua senha"
+        type="password"
+        formControlName="senha"
+      ></ion-input>
+      <ng-container *ngFor="let erro of mensagens.senha">
+        <span
+          class="msg-erro"
+          *ngIf="formLogin.get('senha').hasError(erro.tipo) && (formLogin.get('senha').dirty || formLogin.get('senha').touched)"
+        >
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
 
   <p><a href="#">Esqueceu a senha?</a></p>
 
@@ -36,5 +57,10 @@
   <ion-label class="espaco">Ainda não tem uma conta? <a routerLink="../registro">Registre-se</a></ion-label>
 </div>
 
-</ion-card>
+  </ion-card>
+</form>
+
 </ion-content>
+
+
+

@@ -26,6 +26,8 @@ export class CadastroPage implements OnInit {
     ],
     validade: [
       { tipo: 'required', mensagem: 'O campo validade é obrigatório.' },
+      { tipo: 'maxlength', mensagem: 'Validade deve ter no máximo 10 caracteres' },
+      { tipo: 'minLength', mensagem: 'Validade deve ter no mínimo 8 caracteres'}
     ],
     preco: [
       { tipo: 'required', mensagem: 'É obrigatório confirmar o preço.' },
@@ -36,7 +38,7 @@ export class CadastroPage implements OnInit {
     this.formCadastro = this.formBuilder.group({
       nomep: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       descricao: ['', Validators.compose([Validators.required])],
-      validade: ['', Validators.compose([Validators.required, Validators.maxLength(10)])],
+      validade: ['', Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(8)])],
       preco: ['', Validators.compose([Validators.required])]
 
     }
@@ -48,7 +50,7 @@ export class CadastroPage implements OnInit {
 
   async salvarCadastro(){
     if (this.formCadastro.valid){
-      this.produto.nomep = this.formCadastro.value.nome;
+      this.produto.nomep = this.formCadastro.value.nomep;
       this.produto.descricao = this.formCadastro.value.descricao;
       this.produto.validade = this.formCadastro.value.validade;
       this.produto.preco = this.formCadastro.value.preco;

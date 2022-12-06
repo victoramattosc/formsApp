@@ -26,13 +26,13 @@
       <ion-item>
         <ion-label position="floating">Nome</ion-label>
         <ion-input
-          placeholder="Insira seu nome"
-          formControlName="nome"
+          placeholder="Insira o nome do produto"
+          formControlName="nomep"
         ></ion-input>
-        <ng-container *ngFor="let erro of mensagens.nome">
+        <ng-container *ngFor="let erro of mensagens.nomep">
           <span
             class="msg-erro"
-            *ngIf="formCadastro.get('nome').hasError(erro.tipo) && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)"
+            *ngIf="formCadastro.get('nomep').hasError(erro.tipo) && (formCadastro.get('nomep').dirty || formCadastro.get('nomep').touched)"
           >
             {{erro.mensagem}}
           </span>
@@ -58,7 +58,7 @@
       <ion-item>
         <ion-label position="floating">Validade</ion-label>
         <ion-input
-          placeholder="Insira a validade | Ex: 10/12/22"
+          placeholder="Ex: 10/12/22"
           formControlName="validade"
         ></ion-input>
         <ng-container *ngFor="let erro of mensagens.validade">
@@ -76,7 +76,7 @@
         <ion-input
           placeholder="Insira o preço"
           formControlName="preco"
-        ></ion-input>
+        >R$</ion-input>
         <ng-container *ngFor="let erro of mensagens.preco">
           <span
             class="msg-erro"
