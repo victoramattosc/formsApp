@@ -55,7 +55,7 @@ export class CadastroPage implements OnInit {
       this.produto.validade = this.formCadastro.value.validade;
       this.produto.preco = this.formCadastro.value.preco;
       await this.storageService.set(this.produto.nomep, this.produto);
-      this.route.navigateByUrl('/tabs/tab1');
+      this.route.navigateByUrl('/tabs/tab2');
     }
     else{
       alert('Formulário Inválido');
